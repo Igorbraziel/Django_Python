@@ -1,3 +1,12 @@
 {% extends 'global/base.html' %}
 
-{% block texto %} NEW_BLOG_TEXT {% endblock texto %}
+{% if  text%}
+{% block texto %} {{ text }} {% endblock texto %}
+{% endif %}
+
+
+{% block postblock %}
+    {% for post in posts %}
+        {% include "global/partials/postblock.html" %}
+    {% endfor %}
+{% endblock postblock %}
